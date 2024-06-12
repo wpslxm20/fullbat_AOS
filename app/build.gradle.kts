@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace = "com.triplefarmer.fullbat"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.triplefarmer.fullbat"
         minSdk = 24
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -66,4 +66,25 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+
+    // retrofit2
+    implementation ("com.squareup.retrofit2:converter-gson:2.6.2")
+    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+
+    // okhttp
+    // define a BOM and its version
+    implementation(platform("com.squareup.okhttp3:okhttp-bom:4.11.0"))
+    // define any required OkHttp artifacts without version
+    implementation("com.squareup.okhttp3:okhttp")
+    implementation("com.squareup.okhttp3:logging-interceptor")
+
+    // coroutine
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.2")
+
+    // DataStore
+    implementation ("androidx.datastore:datastore-preferences:1.0.0")
+
+    // navigation
+    val nav_version = "2.7.7"
+    implementation("androidx.navigation:navigation-compose:$nav_version")
 }
